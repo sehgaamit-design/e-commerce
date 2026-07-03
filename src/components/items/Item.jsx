@@ -14,6 +14,11 @@ const Item = (props) => {
             <div className="item-old-price">
                 <p>${props.old_price} </p>
             </div>
+ //bhilihoih
+
+
+
+            //vjvjvuviug
 
         </div>
 
