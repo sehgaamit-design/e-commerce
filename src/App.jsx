@@ -6,6 +6,7 @@ import Shopctg from "./pages/Shopctg";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import Loginsignup from "./pages/Loginsignup";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Loginsignup />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
