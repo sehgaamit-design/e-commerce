@@ -1,5 +1,9 @@
 .item {
-  width: 350px;
+  width: 300px;
+}
+
+.item img {
+  width: 95%;
 }
 
 .item p {
