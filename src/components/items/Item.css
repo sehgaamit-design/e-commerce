@@ -1,9 +1,12 @@
 .item {
-  width: 300px;
+  width: min(100%, 300px);
+  flex: 1 1 260px;
 }
 
 .item img {
   width: 95%;
+  display: block;
+  object-fit: cover;
 }
 
 .item p {
@@ -13,6 +16,7 @@
 .item-price {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .item-new-price {
@@ -31,4 +35,15 @@
 .item:hover {
   transform: scale(1.05);
   transition: 0.6s;
+}
+
+@media (max-width: 768px) {
+  .item {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .item-price {
+    gap: 12px;
+  }
 }

@@ -1,13 +1,13 @@
 .Newsletter{
-    width: 83%;
-    height: 50vh;
+    width: min(83%, 1200px);
+    min-height: 50vh;
     align-items: center;
     text-align: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
     margin: auto;
-    padding: 0 140px;
+    padding: 40px 20px;
     margin-bottom: 150px;
     background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
     gap: 30px;
@@ -15,7 +15,7 @@
 
 .Newsletter h1{
     color: #454545;
-    font-size: 55px;
+    font-size: clamp(2rem, 4vw, 3.4rem);
     font-weight: 600;
 }
 
@@ -29,14 +29,15 @@
     align-items: center;
     justify-content: space-between;
     background: white;
-    width: 730px;
+    width: min(100%, 730px);
     height: 60px;
     border-radius: 80px;
     border: 1px solid #e3e3e3; 
+    overflow: hidden;
 }
 
 .input-mail input{
-    width: 500px;
+    width: 100%;
     margin-left: 30px;
     border: none;
     outline: none;
@@ -47,11 +48,40 @@
 
 .btn-sbs{
     width: 250px;
+    min-width: 150px;
     height: 60px;
     border-radius: 80px;
     background-color: black;
     color: white;
     font-size: 16px;
     cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    .Newsletter {
+        width: 90%;
+        margin-bottom: 80px;
+    }
+
+    .input-mail {
+        flex-direction: column;
+        height: auto;
+        border-radius: 20px;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .input-mail input {
+        width: 100%;
+        margin-left: 0;
+        padding: 12px 14px;
+        border-radius: 12px;
+        background: #f8f8f8;
+    }
+
+    .btn-sbs {
+        width: 100%;
+        border-radius: 12px;
+    }
 }
 
