@@ -3,14 +3,16 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    height: 90vh;
+    min-height: 90vh;
+    padding: 40px 20px 20px;
 }
 
 .popular h2{
     margin: 10px 0;
-    font-size: 50px;
+    font-size: clamp(2rem, 4vw, 3.1rem);
     font-weight: 600;
     color: #171717;
+    text-align: center;
 }
 
 .popular hr{
@@ -23,6 +25,19 @@
 .top-items{
     display: flex;
     gap: 20px;
-    margin-top: 20px ;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .popular {
+        min-height: auto;
+        padding-top: 30px;
+    }
+
+    .top-items {
+        gap: 16px;
+    }
 }
 

@@ -1,0 +1,144 @@
+.cartitems {
+  margin: 80px 10%;
+}
+
+.cartitems-format-main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  color: #454545;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.cartitems-format {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+  font-size: 16px;
+}
+
+.cartitems-format img:first-child {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.cartitems-format img:last-child {
+  width: 15px;
+  cursor: pointer;
+}
+
+.cartitems hr {
+  border: none;
+  height: 1px;
+  background: #e2e2e2;
+  margin: 20px 0;
+}
+
+.cartitemqty {
+  width: 50px;
+  height: 40px;
+  background: white;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.cartitems-down {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  gap: 80px;
+}
+
+.cartitems-total {
+  width: 450px;
+}
+
+.cartitems-total h1 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.cartitems-total-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.cartitems-total button,
+.cartitems-down > button {
+  width: 250px;
+  height: 50px;
+  border: none;
+  background: #ff4141;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.cartitems_promocode {
+  margin-top: 50px;
+  width: 500px;
+}
+
+.cartitems_promocode p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.cartitems_promobox {
+  display: flex;
+  width: 100%;
+}
+
+.cartitems_promobox input {
+  flex: 1;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding: 0 15px;
+  font-size: 15px;
+  outline: none;
+}
+
+.cartitems_promobox button {
+  width: 120px;
+  height: 50px;
+  border: none;
+  background: #333;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.cartitems_promobox button:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .cartitems {
+    margin: 40px 5%;
+    overflow-x: auto;
+  }
+
+  .cartitems-format-main,
+  .cartitems-format {
+    min-width: 700px;
+  }
+
+  .cartitems-down {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .cartitems-total,
+  .cartitems_promocode {
+    width: 100%;
+  }
+}

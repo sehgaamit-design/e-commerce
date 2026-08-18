@@ -1,14 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import cart_icon from "../../assets/cart_icon.png";
 import { Link } from "react-router-dom";
+import { ShopContext } from "../Context/ShopContext";
 
 const Navbar = () => {
 
-  // track which tab is open 
   const [menu, setMenu] = useState("");
+
+  const {getTotalCartItems} = useContext(ShopContext);
 
   return (
     
@@ -60,7 +62,7 @@ const Navbar = () => {
           <img src={cart_icon} alt="cart" />
         </Link>
 
-        <div className="nav-cart-count">0</div>
+        <div className="nav-cart-count">{getTotalCartItems()}</div>
       </div>
     </div>
   );
