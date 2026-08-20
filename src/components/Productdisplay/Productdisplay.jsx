@@ -6,6 +6,11 @@ import { ShopContext } from "../Context/ShopContext";
 
 const Productdisplay = (props) => {
   const { product } = props;
+  const [mainImage, setMainImage] = React.useState(product.image);
+
+  React.useEffect(() => {
+    setMainImage(product.image);
+  }, [product.image]);
 
   const { addtocart } = useContext(ShopContext);
 
@@ -13,13 +18,13 @@ const Productdisplay = (props) => {
     <div className="product-display">
       <div className="productdisplayleft">
         <div className="productdisplay-imglist">
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
-          <img src={product.image} alt="" />
+          <img src={product.image} alt="" onClick={() => setMainImage(product.image)} />
+          <img src={product.image} alt="" onClick={() => setMainImage(product.image)} />
+          <img src={product.image} alt="" onClick={() => setMainImage(product.image)} />
+          <img src={product.image} alt="" onClick={() => setMainImage(product.image)} />
         </div>
         <div className="productdisplay-img">
-          <img className="product-display-mainimg" src={product.image} alt="" />
+          <img className="product-display-mainimg" src={mainImage} alt="" />
         </div>
       </div>
 

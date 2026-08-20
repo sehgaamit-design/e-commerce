@@ -1,0 +1,86 @@
+.order-success-page {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #eef0f2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 64px;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.order-success-page h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.order-success-page p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.order-details-box {
+  background-color: #fafafa;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: left;
+  margin-bottom: 30px;
+  border: 1px dashed #ddd;
+}
+
+.order-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-detail-row:last-child {
+  border-bottom: none;
+  font-weight: 700;
+  font-size: 18px;
+  color: #333;
+}
+
+.order-detail-row span:first-child {
+  color: #777;
+}
+
+.order-success-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.order-success-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #edb017;
+  color: white;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.order-success-btn:hover {
+  opacity: 0.9;
+}

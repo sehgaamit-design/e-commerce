@@ -8,26 +8,50 @@
 .productdisplayleft{
     display: flex;
     gap: 17px;
-    flex: 1;
+    flex: 1.2;
+    max-width: 733px;
+    width: 100%;
 }
 
 .productdisplay-imglist{
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 130px;
+    flex-shrink: 0;
 }
 
 .productdisplay-imglist img{
     height: 163px;
-    width: 100%;
+    width: 130px;
     object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.productdisplay-imglist img:hover {
+    opacity: 0.8;
+}
+
+.productdisplay-img {
+    flex: 1;
+    max-width: 586px;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .product-display-mainimg{
-    width: min(100%, 586px);
-    height: auto;
-    max-height: 700px;
+    width: 100%;
+    height: 700px;
     object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: zoom-in;
+}
+
+.productdisplay-img:hover .product-display-mainimg {
+    transform: scale(1.12);
 }
 
 .productdisplayright{
@@ -118,14 +142,16 @@
     .product-display {
         margin: 0 40px;
         flex-direction: column;
+        align-items: stretch;
     }
 
     .productdisplayleft {
         justify-content: center;
+        max-width: 100%;
     }
 
     .productdisplayright {
-        margin: 0;
+        margin: 40px 0 0 0;
     }
 }
 
@@ -135,8 +161,9 @@
     }
 
     .productdisplayleft {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
+        gap: 16px;
     }
 
     .productdisplay-imglist {
@@ -144,11 +171,23 @@
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
+        gap: 12px;
     }
 
     .productdisplay-imglist img {
-        width: 80px;
-        height: 100px;
+        width: 70px;
+        height: 85px;
+    }
+
+    .productdisplay-img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .product-display-mainimg {
+        height: auto;
+        aspect-ratio: 4/5;
+        width: 100%;
     }
 
     .productdisplayright h1 {
