@@ -1,0 +1,250 @@
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.admin-sidebar {
+  width: 240px;
+  background: #1f1f1f;
+  color: white;
+  min-height: 100vh;
+  padding: 25px 15px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.admin-logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.admin-logo h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.admin-logo span {
+  font-size: 11px;
+  color: #aaa;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-sidebar li {
+  margin-bottom: 8px;
+}
+
+.admin-sidebar a {
+  display: block;
+  padding: 13px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.admin-sidebar a:hover {
+  background: #333;
+}
+
+.admin-logout {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  width: calc(100% - 40px);
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  background: #e74c3c;
+  color: white;
+  border-radius: 5px;
+}
+
+.admin-main {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  padding: 35px;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.admin-header h1 {
+  margin: 0 0 5px;
+}
+
+.admin-header p {
+  color: #777;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h3 {
+  color: #777;
+  margin-top: 0;
+}
+
+.dashboard-card h2 {
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.admin-welcome {
+  background: white;
+  padding: 25px;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.quick-actions button {
+  padding: 12px 18px;
+  border: none;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.admin-form-card,
+.admin-table-card {
+  background: white;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+}
+
+.product-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.product-form input,
+.product-form select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.product-form button {
+  padding: 12px;
+  background: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-table-card {
+  overflow-x: auto;
+}
+
+.admin-table-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table-card th,
+.admin-table-card td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.admin-table-card th {
+  background: #f5f5f5;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.status {
+  padding: 5px 10px;
+  background: #eee;
+  border-radius: 15px;
+}
+
+.admin-login-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-login-box {
+  width: 380px;
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-box h1 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.admin-login-box p {
+  text-align: center;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+.admin-login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-login-box input {
+  padding: 13px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.admin-login-box button {
+  padding: 13px;
+  background: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-login-box small {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #888;
+}

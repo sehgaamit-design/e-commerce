@@ -1,5 +1,25 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins';            
+    font-family: 'Poppins', sans-serif;            
+}
+
+/* Offset for fixed navbar */
+.shop-app-wrapper {
+    padding-top: 80px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 900px) {
+    .shop-app-wrapper {
+        padding-top: 140px;
+    }
+}
+
+@media (max-width: 520px) {
+    .shop-app-wrapper {
+        padding-top: 190px;
+    }
 }

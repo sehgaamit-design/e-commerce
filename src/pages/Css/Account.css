@@ -1,0 +1,126 @@
+.account-page {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .account-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+.account-sidebar {
+  background-color: #fcfcfc;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  height: fit-content;
+}
+
+.account-sidebar h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.account-info-item {
+  margin-bottom: 15px;
+}
+
+.account-info-item label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.account-info-item p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.account-logout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #cd3232;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: opacity 0.2s;
+}
+
+.account-logout-btn:hover {
+  opacity: 0.9;
+}
+
+.orders-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: 600;
+  border-bottom: 2px solid #edb017;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.orders-table-container {
+  overflow-x: auto;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.orders-table th, .orders-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.orders-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: #555;
+}
+
+.orders-table tr:hover {
+  background-color: #fafafa;
+}
+
+.order-products {
+  font-size: 14px;
+  color: #555;
+}
+
+.order-product-item {
+  margin-bottom: 4px;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.status-pending { background-color: #fff3cd; color: #856404; }
+.status-confirmed { background-color: #d1ecf1; color: #0c5460; }
+.status-shipped { background-color: #cce5ff; color: #004085; }
+.status-out-for-delivery { background-color: #e2e3e5; color: #383d41; }
+.status-delivered { background-color: #d4edda; color: #155724; }
+.status-cancelled { background-color: #f8d7da; color: #721c24; }
