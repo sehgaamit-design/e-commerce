@@ -21,7 +21,19 @@ const Loginsignup = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleAuth = () => {
+  const toggleState = (newState) => {
+    setState(newState);
+    setFormData({
+      name: "",
+      email: "",
+      password: "",
+      confirmPassword: ""
+    });
+  };
+
+  const handleAuth = (e) => {
+    if (e) e.preventDefault();
+
     if (state === "Sign Up") {
       if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
         alert("Please fill all fields");
@@ -44,13 +56,7 @@ const Loginsignup = () => {
 
       if (result.success) {
         alert("Account created successfully! Please login.");
-        setState("Login");
-        setFormData({
-          name: "",
-          email: "",
-          password: "",
-          confirmPassword: ""
-        });
+        toggleState("Login");
       } else {
         alert(result.message);
       }
@@ -75,50 +81,56 @@ const Loginsignup = () => {
     <div className="loginsignup">
       <div className="loginsignup-container">
         <h1>{state}</h1>
-        <div className="loginsignup-fields">
-          {state === "Sign Up" && (
+        <form onSubmit={handleAuth} style={{ display: "contents" }}>
+          <div className="loginsignup-fields">
+            {state === "Sign Up" && (
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={changeHandler}
+                id="signup-name"
+              />
+            )}
             <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={formData.email}
               onChange={changeHandler}
+              id="login-email"
             />
-          )}
-          <input
-            type="email"
-            name="email"
-            placeholder="Email Address"
-            value={formData.email}
-            onChange={changeHandler}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={changeHandler}
-          />
-          {state === "Sign Up" && (
             <input
               type="password"
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              value={formData.confirmPassword}
+              name="password"
+              placeholder="Password"
+              value={formData.password}
               onChange={changeHandler}
+              id="login-password"
             />
-          )}
-        </div>
-        <button onClick={handleAuth}>Continue</button>
+            {state === "Sign Up" && (
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                value={formData.confirmPassword}
+                onChange={changeHandler}
+                id="signup-confirm-password"
+              />
+            )}
+          </div>
+          <button type="submit">{state === "Sign Up" ? "Continue" : "Login"}</button>
+        </form>
         {state === "Sign Up" ? (
           <p className="loginsignup-login">
             Already have an Account?{" "}
-            <span onClick={() => setState("Login")}>Login here</span>
+            <span onClick={() => toggleState("Login")}>Login here</span>
           </p>
         ) : (
           <p className="loginsignup-login">
             Don't have an Account?{" "}
-            <span onClick={() => setState("Sign Up")}>Create account</span>
+            <span onClick={() => toggleState("Sign Up")}>Create account</span>
           </p>
         )}
         {state === "Sign Up" && (

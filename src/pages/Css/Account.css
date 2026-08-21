@@ -124,3 +124,21 @@
 .status-out-for-delivery { background-color: #e2e3e5; color: #383d41; }
 .status-delivered { background-color: #d4edda; color: #155724; }
 .status-cancelled { background-color: #f8d7da; color: #721c24; }
+
+.invoice-download-btn {
+  padding: 6px 12px;
+  background-color: #edb017;
+  color: #111;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.invoice-download-btn:hover {
+  background-color: #d19a12;
+  transform: translateY(-1px);
+}
+

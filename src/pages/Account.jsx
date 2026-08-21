@@ -1,15 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../components/Context/ShopContext";
+import { generateInvoicePDF } from "../utils/invoiceGenerator";
 import "./Css/Account.css";
+
 
 const Account = () => {
   const { loggedInUser, logoutUser } = useContext(ShopContext);
   const navigate = useNavigate();
 
   // If not logged in, redirect to login
+  useEffect(() => {
+    if (!loggedInUser) {
+      navigate("/login");
+    }
+  }, [loggedInUser, navigate]);
+
   if (!loggedInUser) {
-    navigate("/login");
     return null;
   }
 
@@ -63,6 +70,7 @@ const Account = () => {
                   <th>Payment</th>
                   <th>Delivery</th>
                   <th>Status</th>
+                  <th>Invoice</th>
                 </tr>
               </thead>
               <tbody>
@@ -88,6 +96,14 @@ const Account = () => {
                       <span className={getStatusClass(order.status)}>
                         {order.status}
                       </span>
+                    </td>
+                    <td>
+                      <button 
+                        className="invoice-download-btn"
+                        onClick={() => generateInvoicePDF(order)}
+                      >
+                        Download
+                      </button>
                     </td>
                   </tr>
                 ))}

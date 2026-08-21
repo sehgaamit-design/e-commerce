@@ -32,7 +32,8 @@ import { ShopContext } from "./components/Context/ShopContext";
 // Customer Route Protection Guard
 const ProtectedRoute = () => {
   const { loggedInUser } = React.useContext(ShopContext);
-  return loggedInUser ? <Outlet /> : <Navigate to="/login" replace />;
+  const location = useLocation();
+  return loggedInUser ? <Outlet /> : <Navigate to="/login" replace state={{ from: location }} />;
 };
 
 const ShopLayout = () => {

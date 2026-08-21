@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, Link, Navigate } from "react-router-dom";
+import { generateInvoicePDF } from "../utils/invoiceGenerator";
 import "./Css/OrderSuccess.css";
 
 const OrderSuccess = () => {
@@ -39,7 +40,14 @@ const OrderSuccess = () => {
       </div>
 
       <div className="order-success-actions">
-        <Link to="/account" className="order-success-btn btn-primary">
+        <button
+          className="order-success-btn btn-primary"
+          onClick={() => generateInvoicePDF(order)}
+          style={{ border: "none", fontSize: "16px" }}
+        >
+          Download Invoice
+        </button>
+        <Link to="/account" className="order-success-btn btn-secondary">
           View My Orders
         </Link>
         <Link to="/" className="order-success-btn btn-secondary">
@@ -51,3 +59,4 @@ const OrderSuccess = () => {
 };
 
 export default OrderSuccess;
+

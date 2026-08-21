@@ -147,7 +147,7 @@ export const ShopContextProvider = (props) => {
   // Auth Functions
   const registerUser = (userData) => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    if (users.find(u => u.email.toLowerCase() === userData.email.toLowerCase())) {
+    if (users.find(u => u.email && u.email.toLowerCase() === userData.email.toLowerCase())) {
       return { success: false, message: "Email already exists" };
     }
     users.push(userData);
@@ -157,7 +157,7 @@ export const ShopContextProvider = (props) => {
 
   const loginUser = (email, password) => {
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    const user = users.find(u => u.email.toLowerCase() === email.toLowerCase() && u.password === password);
+    const user = users.find(u => u.email && u.email.toLowerCase() === email.toLowerCase() && u.password === password);
     if (user) {
       const payload = {
         name: user.name,
