@@ -17,10 +17,7 @@ const AdminDashboard = () => {
   const activeShipping = shippingMethods.filter((m) => m.active).length;
   const activePayments = paymentMethods.filter((p) => p.active).length;
 
-  // Calculate total revenue from completed/confirmed/all orders.
-  // The requirement says: "Calculate total revenue from completed orders."
-  // Let's check status: if order.status === "Delivered", sum it, or fallback to sum all if none are delivered.
-  // We can filter by "Delivered" status specifically.
+  
   const deliveredOrders = orders.filter((o) => o.status === "Delivered");
   const totalRevenue = deliveredOrders.reduce((sum, order) => sum + order.totalAmount, 0);
 
